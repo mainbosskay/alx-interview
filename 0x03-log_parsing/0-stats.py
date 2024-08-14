@@ -12,7 +12,7 @@ def print_statistics(status_dict, total_size):
 
 
 API_statusCodes = {"200": 0, "301": 0, "400": 0, "401": 0,
-                    "403": 0, "404": 0, "405": 0, "500": 0}
+                   "403": 0, "404": 0, "405": 0, "500": 0}
 count_log = 0
 total_size = 0
 
