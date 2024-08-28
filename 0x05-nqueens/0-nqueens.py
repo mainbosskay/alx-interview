@@ -28,7 +28,7 @@ class NQueens:
                 self.queenPos[posNow] = colmn
                 if posNow == self.size:
                     solution = []
-                    for column in range(1, self.size + 1):
+                    for colmn in range(1, self.size + 1):
                         solution.append([colmn - 1, self.queenPos[colmn] - 1])
                     self.solutions.append(solution)
                 else:
