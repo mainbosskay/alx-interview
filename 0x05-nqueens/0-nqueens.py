@@ -12,24 +12,24 @@ class NQueens:
         self.queenPos = [0 for pos in range(size + 1)]
         self.solutions = []
 
-    def queen_placement(self, posNow, column):
+    def queen_placement(self, posNow, colmn):
         """Checking if queen can be positioned in specific column"""
         for posThen in range(1, posNow):
-            if self.queenPos[posThen] == column or \
-                    abs(self.queenPos[posThen] - column) \
+            if self.queenPos[posThen] == colmn or \
+                    abs(self.queenPos[posThen] - colmn) \
                     == abs(posThen - posNow):
                 return 0
         return 1
 
     def nqueens(self, posNow):
         """Solving NQueens by trying to place on queens on board"""
-        for column in range(1, self.size + 1):
-            if self.queen_placement(posNow, column):
-                self.queenPos[posNow] = column
+        for colmn in range(1, self.size + 1):
+            if self.queen_placement(posNow, colmn):
+                self.queenPos[posNow] = colmn
                 if posNow == self.size:
                     solution = []
                     for column in range(1, self.size + 1):
-                        solution.append([column - 1, self.queenPos[column] - 1])
+                        solution.append([colmn - 1, self.queenPos[colmn] - 1])
                     self.solutions.append(solution)
                 else:
                     self.nqueens(posNow + 1)
@@ -55,5 +55,5 @@ if N < 4:
 queen = NQueens(N)
 solutions = queen.nqueens(1)
 
-for column in solutions:
-    print(column)
+for colmn in solutions:
+    print(colmn)
